@@ -8,6 +8,25 @@
   </head>
   <body>
     <h1>Javascript Nuggets</h1>
+    <h2>Form and Email it</h2>
+
+    <form action="https://formsubmit.co/sb.dhlamini@gmail.com" method="post">
+      <input type="hidden" name="_subject" value="New email wooo!" />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://sb-dhlamini/thankyou.html"
+      />
+      <input
+        type="text"
+        name="name"
+        placeholder="Write your message"
+        required
+      />
+
+      <button type="submit">Send</button>
+    </form>
 
     <script src="index.js"></script>
   </body>

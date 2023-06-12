@@ -1,4 +1,4 @@
-//Dynamic Object Keys
+// Part 1: Dynamic Object Keys
 
 //Normal object
 const person = {
@@ -37,3 +37,31 @@ let keyName = "computer";
 app[keyName] = "apple";
 
 console.log(app);
+//note that the property takes the value of the defined property
+
+//Example
+const state = {
+  loading: true,
+  name: "",
+  job: "",
+};
+
+function updateState(key, value) {
+  state[key] = value;
+}
+
+//adding a value for the name property
+updateState("name", "john");
+console.log(state);
+
+//Adding a value for the job property
+updateState("job", "computer engineer");
+console.log(state);
+
+//Updating properties values
+updateState("loading", false);
+console.log(state);
+
+//adding new keys
+updateState("products", ["apples", "banana"]);
+console.log(state);

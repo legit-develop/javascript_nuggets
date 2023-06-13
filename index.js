@@ -107,3 +107,11 @@ console.log(newCategories); //result in an object format
 //Unique values in an array format
 const uniqueCategory = [...new Set(categories)];
 console.log(uniqueCategory);
+
+const resultEl = document.querySelector(".result");
+console.log(resultEl);
+resultEl.innerHTML = uniqueCategory
+  .map((category) => {
+    return `<button>${category}</button>`;
+  })
+  .join("");

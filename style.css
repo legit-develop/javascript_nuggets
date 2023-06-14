@@ -6,3 +6,9 @@ button {
   color: #fff;
   background: rgb(247, 188, 78);
 }
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  color: gray;
+}

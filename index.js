@@ -68,7 +68,7 @@ updateState("products", ["apples", "banana"]);
 
 //Part 2 - Unique values
 
-console.log("unique values");
+//console.log("unique values");
 const menu = [
   {
     name: "pancakes",
@@ -98,20 +98,70 @@ const menu = [
 
 //Iterate over all the categories
 const categories = menu.map((item) => item.category);
-console.log(categories);
+//console.log(categories);
 
 //Unique categories
 const newCategories = new Set(categories);
-console.log(newCategories); //result in an object format
+//console.log(newCategories); //result in an object format
 
 //Unique values in an array format
 const uniqueCategory = [...new Set(categories)];
-console.log(uniqueCategory);
+//console.log(uniqueCategory);
 
 const resultEl = document.querySelector(".result");
-console.log(resultEl);
+//console.log(resultEl);
 resultEl.innerHTML = uniqueCategory
   .map((category) => {
     return `<button>${category}</button>`;
   })
   .join("");
+
+//Part 3 - Map Method
+//It returns an array
+//Doesn't alter the values of the original array
+const people = [
+  {
+    name: "bob",
+    age: 20,
+    position: "developer",
+  },
+  {
+    name: "anna",
+    age: 25,
+    position: "designer",
+  },
+  {
+    name: "susy",
+    age: 30,
+    position: "the boss",
+  },
+  {
+    name: "mike",
+    age: 39,
+    position: "politician",
+  },
+];
+
+const ages = people.map((person) => person.age);
+console.log(ages);
+
+//Create the function separately
+
+const getPosition = (position) => position.position;
+const positions = people.map(getPosition);
+console.log(positions);
+
+//returning an object
+const newPeople = people.map((item) => {
+  return {
+    firstName: item.name.toUpperCase(),
+    oldAge: item.age + 20,
+  };
+});
+
+console.log(newPeople);
+
+//Wrap the data in HTML
+const mapElement = document.getElementById("map-method");
+const names = people.map((person) => `<h1>${person.name}</h1>`);
+mapElement.innerHTML = names.join("");
